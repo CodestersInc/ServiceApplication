@@ -7,6 +7,7 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +21,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
     private SharedPreferences sharedPreferences;
     private boolean backPressedToExitOnce = false;
     private Toast toast = null;
+    private Toolbar toolbar;
 
     public static final String UNAME = "nameKey";
     public static final String PWD = "pwdKey";
@@ -32,6 +34,10 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
         if (getIntent().getBooleanExtra("EXIT", false)) {
             finish();
         }
+
+        toolbar = (Toolbar)findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Welcome");
 
         sharedPreferences = getSharedPreferences(MYPREFERENCES, Context.MODE_PRIVATE);
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
@@ -73,15 +79,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }

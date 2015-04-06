@@ -88,7 +88,6 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.MyView
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.foodListText);
             icon = (ImageView) itemView.findViewById(R.id.foodListIcon);
-            title.setBackgroundResource(R.drawable.shape);
             expandableArea = (LinearLayout) itemView.findViewById(R.id.llExpandArea);
         }
     }

@@ -8,32 +8,36 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HomeActivity">
-        </activity>
+            android:name=".HomeActivity"
+            android:configChanges="orientation|screenSize"></activity>
 
-        <activity
-            android:name=".LoginActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name=".FoodServiceActivity">
-        </activity>
+            android:name=".FoodServiceActivity"
+            android:configChanges="orientation|screenSize"></activity>
 
         <activity
-            android:name=".HousekeepingServiceActivity">
-        </activity>
+            android:name=".HousekeepingServiceActivity"
+            android:configChanges="orientation|screenSize"></activity>
 
         <activity
-            android:name=".MedicalServiceActivity">
-        </activity>
+            android:name=".MedicalServiceActivity"
+            android:configChanges="orientation|screenSize"></activity>
 
         <activity
-            android:name=".TransportServiceActivity">
-        </activity>
+            android:name=".TransportServiceActivity"
+            android:configChanges="orientation|screenSize"></activity>
+
+        <activity
+            android:name=".FeedbackActivity"
+            android:configChanges="orientation|screenSize"></activity>
     </application>
 
 </manifest>

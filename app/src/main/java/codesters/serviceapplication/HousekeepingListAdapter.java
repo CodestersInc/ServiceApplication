@@ -86,7 +86,6 @@ public class HousekeepingListAdapter extends RecyclerView.Adapter<HousekeepingLi
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.hoskeepingListText);
             icon = (ImageView) itemView.findViewById(R.id.houskeepingListIcon);
-            title.setBackgroundResource(R.drawable.shape);
             expandableArea = (LinearLayout) itemView.findViewById(R.id.llExpandArea);
         }
     }

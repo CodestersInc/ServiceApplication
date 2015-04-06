@@ -86,7 +86,6 @@ public class TransportListAdapter extends RecyclerView.Adapter<TransportListAdap
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.transportListText);
             icon = (ImageView) itemView.findViewById(R.id.transportListIcon);
-            title.setBackgroundResource(R.drawable.shape);
             expandableArea = (LinearLayout) itemView.findViewById(R.id.llExpandArea);
         }
     }

@@ -86,7 +86,6 @@ public class MedicalListAdapter extends RecyclerView.Adapter<MedicalListAdapter.
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.medicalListText);
             icon = (ImageView) itemView.findViewById(R.id.medicalListIcon);
-            title.setBackgroundResource(R.drawable.shape);
             expandableArea = (LinearLayout) itemView.findViewById(R.id.llExpandArea);
         }
     }

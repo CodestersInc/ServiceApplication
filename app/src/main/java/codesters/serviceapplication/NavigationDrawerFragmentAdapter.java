@@ -88,6 +88,7 @@ public class NavigationDrawerFragmentAdapter extends RecyclerView.Adapter<Naviga
                 case "Extra Service":
                     break;
                 case "Feedback":
+                    context.startActivity(new Intent(context, FeedbackActivity.class));
                     break;
                 case "Logout": {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
