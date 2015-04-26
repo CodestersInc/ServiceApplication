@@ -19,7 +19,7 @@ public class NavigationDrawerFragment extends Fragment {
 
     private RecyclerView reclylerView;
     private ActionBarDrawerToggle mDrawerToggle;
-    private DrawerLayout mDrawerLayout;
+    public static DrawerLayout mDrawerLayout;
     private NavigationDrawerFragmentAdapter adapter;
     private View containerView;
 
@@ -27,8 +27,8 @@ public class NavigationDrawerFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static List<Information> getData() {
-        List<Information> data = new ArrayList<>();
+    public static List<DrawerItem> getData() {
+        List<DrawerItem> data = new ArrayList<>();
         int[] icons = {R.drawable.ic_home_modern,
                 R.drawable.ic_food,
                 R.drawable.ic_housekeeping,
@@ -39,7 +39,7 @@ public class NavigationDrawerFragment extends Fragment {
                 R.drawable.ic_logout};
         String[] titles = {"Home", "Food", "Housekeeping", "Health & Medical", "Transport", "Extra Service", "Feedback", "Logout"};
         for (int i = 0; i < titles.length; i++) {
-            Information current = new Information(icons[i], titles[i]);
+            DrawerItem current = new DrawerItem(icons[i], titles[i]);
             data.add(current);
         }
         return data;

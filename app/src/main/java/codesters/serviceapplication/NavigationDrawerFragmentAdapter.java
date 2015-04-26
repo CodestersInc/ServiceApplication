@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +20,11 @@ import java.util.List;
 public class NavigationDrawerFragmentAdapter extends RecyclerView.Adapter<NavigationDrawerFragmentAdapter.MyViewHolder> {
 
     private final LayoutInflater inflater;
-    List<Information> data = Collections.emptyList();
+    List<DrawerItem> data = Collections.emptyList();
     private SharedPreferences sharedPreferences;
     private Context context;
 
-    public NavigationDrawerFragmentAdapter(Context context, List<Information> data) {
+    public NavigationDrawerFragmentAdapter(Context context, List<DrawerItem> data) {
         this.context = context;
         inflater = LayoutInflater.from(context);
         this.data = data;
@@ -40,7 +41,7 @@ public class NavigationDrawerFragmentAdapter extends RecyclerView.Adapter<Naviga
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Information current = data.get(position);
+        DrawerItem current = data.get(position);
         holder.title.setText(current.title);
         holder.icon.setImageResource(current.iconID);
     }
@@ -50,7 +51,7 @@ public class NavigationDrawerFragmentAdapter extends RecyclerView.Adapter<Naviga
         return data.size();
     }
 
-    public Information getItem(int i) {
+    public DrawerItem getItem(int i) {
         return data.get(i);
     }
 
@@ -68,22 +69,23 @@ public class NavigationDrawerFragmentAdapter extends RecyclerView.Adapter<Naviga
         @Override
         public void onClick(View v) {
 
-            Information information = getItem(getPosition());
-            switch (information.title) {
+            DrawerItem item = getItem(getPosition());
+            switch (item.title) {
                 case "Home":
-                    context.startActivity(new Intent(context, HomeActivity.class));
+                    HomeActivity.myWebView.loadUrl("http://hom24x7.somee.com");
+                    NavigationDrawerFragment.mDrawerLayout.closeDrawer(Gravity.LEFT);
                     break;
                 case "Food":
-                    context.startActivity(new Intent(context, FoodServiceActivity.class));
+                    HomeActivity.myWebView.loadUrl("http://www.google.com");
+                    NavigationDrawerFragment.mDrawerLayout.closeDrawer(Gravity.LEFT);
                     break;
                 case "Housekeeping":
-                    context.startActivity(new Intent(context, HousekeepingServiceActivity.class));
+                    HomeActivity.myWebView.loadUrl("http://www.yahoo.com");
+                    NavigationDrawerFragment.mDrawerLayout.closeDrawer(Gravity.LEFT);
                     break;
                 case "Health & Medical":
-                    context.startActivity(new Intent(context, MedicalServiceActivity.class));
                     break;
                 case "Transport":
-                    context.startActivity(new Intent(context, TransportServiceActivity.class));
                     break;
                 case "Extra Service":
                     break;
